@@ -61,7 +61,7 @@ function reset() {
 
 function attackMonster(mode) {
 
-    const maxDamage = mode === MODE_ATTACK ? maxDamage = ATTACK_VALUE : STRONG_ATTACK_VALUE;
+    const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
     const logEvent = mode === MODE_ATTACK ? LOG_EVENT_PLAYER_ATTACK : LOG_EVENT_PLAYER_STRONG_ATTACK;
     // if (mode === MODE_ATTACK) {
     //     maxDamage = ATTACK_VALUE;
@@ -195,7 +195,12 @@ function writeToLog(event, value, monsterHealth, playerHealth) {
 }
 
 function printLogHandler() {
-    console.log(battleLog);
+    // for (let i = 0; i < battleLog.length; i++) {
+    //     console.log(battleLog[i]);
+    // }
+    for (const i of battleLog) {
+        console.log(i);
+    }
 }
 
 attackBtn.addEventListener('click', attackHandler);
